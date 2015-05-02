@@ -49,17 +49,17 @@ var dbg_log = (function()
             {
                 if(log_message_repetitions === 1)
                 {
-                    console.log(time_str + log_last_message);
+                    window.console.log(time_str + log_last_message);
                 }
                 else 
                 {
-                    console.log("Previous message repeated " + log_message_repetitions + " times");
+                    window.console.log("Previous message repeated " + log_message_repetitions + " times");
                 }
 
                 log_message_repetitions = 0;
             }
 
-            console.log(time_str + message);
+            window.console.log(time_str + message);
 
             log_last_message = message;
         }
@@ -79,7 +79,7 @@ function dbg_trace(level)
 }
 
 /** 
- * console.assert is fucking slow
+ * window.console.assert is fucking slow
  * @param {string=} msg
  * @param {number=} level
  */
@@ -90,8 +90,8 @@ function dbg_assert(cond, msg, level)
     if(!cond) 
     { 
         //dump_regs();
-        console.log(Error().stack);
-        console.trace();
+        window.console.log(Error().stack);
+        window.console.trace();
 
         if(msg)
         {

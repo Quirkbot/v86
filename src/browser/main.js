@@ -841,7 +841,7 @@
             {
                 if(error)
                 {
-                    console.log("Couldn't save state: ", error);
+                    window.console.log("Couldn't save state: ", error);
                 }
                 else
                 {

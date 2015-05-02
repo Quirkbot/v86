@@ -529,10 +529,10 @@ FPU.prototype.load_m80 = function(addr)
         mantissa = -mantissa;
     }
 
-    //console.log("m: " + mantissa);
-    //console.log("e: " + exponent);
-    //console.log("s: " + this.sign);
-    //console.log("f: " + mantissa * Math.pow(2, exponent - 63));
+    //window.console.log("m: " + mantissa);
+    //window.console.log("e: " + exponent);
+    //window.console.log("s: " + this.sign);
+    //window.console.log("f: " + mantissa * Math.pow(2, exponent - 63));
 
     // Simply compute the 64 bit floating point number.
     // An alternative write the mantissa, sign and exponent in the

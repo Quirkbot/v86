@@ -40,7 +40,7 @@ NetworkAdapter.prototype.handle_message = function(e)
 
 NetworkAdapter.prototype.handle_close = function(e)
 {
-    //console.log("onclose", e);
+    //window.console.log("onclose", e);
 
     this.connect();
     setTimeout(this.connect.bind(this), this.reconnect_interval);
@@ -48,7 +48,7 @@ NetworkAdapter.prototype.handle_close = function(e)
 
 NetworkAdapter.prototype.handle_open = function(e)
 {
-    //console.log("open", e);
+    //window.console.log("open", e);
 
     for(var i = 0; i < this.send_queue.length; i++)
     {
@@ -60,7 +60,7 @@ NetworkAdapter.prototype.handle_open = function(e)
 
 NetworkAdapter.prototype.handle_error = function(e)
 {
-    //console.log("onerror", e);
+    //window.console.log("onerror", e);
 };
 
 NetworkAdapter.prototype.destroy = function() 
@@ -112,7 +112,7 @@ NetworkAdapter.prototype.connect = function()
 
 NetworkAdapter.prototype.send = function(data)
 {
-    //console.log("send", data);
+    //window.console.log("send", data);
 
     if(!this.socket || this.socket.readyState !== 1)
     {

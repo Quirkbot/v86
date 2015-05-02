@@ -210,7 +210,7 @@ CPU.prototype.mul16 = function(source_operand)
 {
     var result = source_operand * this.reg16[reg_ax],
         high_result = result >>> 16;
-    //console.log(h(a) + " * " + h(this.reg16[reg_ax]) + " = " + h(result));
+    //window.console.log(h(a) + " * " + h(this.reg16[reg_ax]) + " = " + h(result));
 
     this.reg16[reg_ax] = result;
     this.reg16[reg_dx] = high_result;
@@ -322,8 +322,8 @@ CPU.prototype.mul32 = function(source_operand)
     }
     this.flags_changed = 0;
 
-    //console.log(h(source_operand >>> 0, 8) + " * " + h(dest_operand >>> 0, 8));
-    //console.log("= " + h(this.reg32[reg_edx], 8) + ":" + h(this.reg32[reg_eax], 8));
+    //window.console.log(h(source_operand >>> 0, 8) + " * " + h(dest_operand >>> 0, 8));
+    //window.console.log("= " + h(this.reg32[reg_edx], 8) + ":" + h(this.reg32[reg_eax], 8));
 }
 
 CPU.prototype.imul32 = function(source_operand)
@@ -347,8 +347,8 @@ CPU.prototype.imul32 = function(source_operand)
     }
     this.flags_changed = 0;
 
-    //console.log(target_operand + " * " + source_operand);
-    //console.log("= " + h(this.reg32[reg_edx]) + " " + h(this.reg32[reg_eax]));
+    //window.console.log(target_operand + " * " + source_operand);
+    //window.console.log("= " + h(this.reg32[reg_edx]) + " " + h(this.reg32[reg_eax]));
 }
 
 /*
@@ -375,8 +375,8 @@ CPU.prototype.imul_reg32 = function(operand1, operand2)
 
     return low_result;
 
-    //console.log(operand + " * " + source_operand);
-    //console.log("= " + this.reg32[reg]);
+    //window.console.log(operand + " * " + source_operand);
+    //window.console.log("= " + this.reg32[reg]);
 }
 #undef do_mul32
 #undef do_imul32
@@ -509,8 +509,8 @@ CPU.prototype.div32 = function(source_operand)
         this.reg32s[reg_edx] = mod;
     }
 
-    //console.log(h(dest_operand_high) + ":" + h(dest_operand_low) + " / " + h(source_operand));
-    //console.log("= " + h(this.reg32[reg_eax]) + " rem " + h(this.reg32[reg_edx]));
+    //window.console.log(h(dest_operand_high) + ":" + h(dest_operand_low) + " / " + h(source_operand));
+    //window.console.log("= " + h(this.reg32[reg_eax]) + " rem " + h(this.reg32[reg_edx]));
 }
 
 CPU.prototype.idiv32 = function(source_operand)
@@ -559,8 +559,8 @@ CPU.prototype.idiv32 = function(source_operand)
         this.reg32s[reg_edx] = mod;
     }
 
-    //console.log(h(dest_operand_high) + ":" + h(dest_operand_low) + " / " + h(source_operand));
-    //console.log("= " + h(this.reg32[reg_eax]) + " rem " + h(this.reg32[reg_edx]));
+    //window.console.log(h(dest_operand_high) + ":" + h(dest_operand_low) + " / " + h(source_operand));
+    //window.console.log("= " + h(this.reg32[reg_eax]) + " rem " + h(this.reg32[reg_edx]));
 }
 
 

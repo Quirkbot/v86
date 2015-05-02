@@ -151,7 +151,7 @@ function MouseAdapter(bus)
         }
         else
         {
-            console.log("Unknown event.which: " + e.which);
+            window.console.log("Unknown event.which: " + e.which);
         }
         mouse.bus.send("mouse-click", [left_down, middle_down, right_down]);
 

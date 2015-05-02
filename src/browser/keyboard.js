@@ -228,7 +228,7 @@ function KeyboardAdapter(bus)
 
         if(chr >= charmap.length || charmap[chr] === 0)
         {
-            console.log("Missing char in map: " + chr.toString(16));
+            window.console.log("Missing char in map: " + chr.toString(16));
             return true;
         }
 
@@ -238,7 +238,7 @@ function KeyboardAdapter(bus)
         {
             code |= 0x80;
         }
-        //console.log("Key: " + code.toString(16) + " from " + chr.toString(16) + " down=" + keydown);
+        //window.console.log("Key: " + code.toString(16) + " from " + chr.toString(16) + " down=" + keydown);
 
         if(code > 0xFF)
         {

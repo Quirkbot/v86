@@ -127,7 +127,7 @@ function restore_object(base, obj, buffers)
 
         if(DEBUG && base === undefined)
         {
-            console.log("Cannot restore (base doesn't exist)", obj);
+            window.console.log("Cannot restore (base doesn't exist)", obj);
             dbg_assert(false);
         }
 

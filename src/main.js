@@ -36,8 +36,8 @@ function v86(bus)
     bus.register("cpu-stop", this.stop, this);
     bus.register("cpu-restart", this.restart, this);
 
-    this.fast_next_tick = function() { console.assert(false); };
-    this.next_tick = function(time) { console.assert(false); };
+    this.fast_next_tick = function() { window.console.assert(false); };
+    this.next_tick = function(time) { window.console.assert(false); };
 }
 
 v86.prototype.run = function() 
@@ -102,7 +102,7 @@ v86.prototype.lazy_init = function()
             setImmediate(function() { emulator.do_tick(); });
         };
     }
-    else if(typeof window !== "undefined" && typeof postMessage !== "undefined")
+    else if(typeof window !== "undefined" && typeof window.postMessage !== "undefined")
     {
         // setImmediate shim for the browser.
         // TODO: Make this deactivatable, for other applications
@@ -209,6 +209,6 @@ else
 
     v86.get_rand_int = function()
     {
-        console.assert(false);
+        window.console.assert(false);
     };
 }

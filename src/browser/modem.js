@@ -23,24 +23,24 @@ function ModemAdapter()
 
 ModemAdapter.prototype.onmessage = function(e)
 {
-    console.log("onmessage", e);
+    window.console.log("onmessage", e);
 };
 
 ModemAdapter.prototype.onclose = function(e)
 {
-    console.log("onclose", e);
+    window.console.log("onclose", e);
     this.opened = false;
 };
 
 ModemAdapter.prototype.onopen = function(e)
 {
-    console.log("open", e);
+    window.console.log("open", e);
     this.opened = true;
 };
 
 ModemAdapter.prototype.onerror = function(e)
 {
-    console.log("onerror", e);
+    window.console.log("onerror", e);
 };
 
 ModemAdapter.prototype.init = function(code_fn)
@@ -55,7 +55,7 @@ ModemAdapter.prototype.destroy = function()
 
 ModemAdapter.prototype.put_chr = function(chr)
 {
-    console.log("put_chr", chr);
+    window.console.log("put_chr", chr);
     if(this.opened)
     {
         this.socket.send(chr);

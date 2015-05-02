@@ -336,8 +336,8 @@ CPU.prototype.exception_cleanup = function(e)
     }
     else
     {
-        console.log(e);
-        console.log(e.stack);
+        window.console.log(e);
+        window.console.log(e.stack);
         throw e;
     }
 }
@@ -646,14 +646,8 @@ CPU.prototype.do_run = function()
         // runs only cycles
         for(var k = LOOP_COUNTER; k--;)
         {
-            if(OP_TRANSLATION)
-            {
-                this.translator.cycle_translated();
-            }
-            else
-            {
+            
                 this.cycle();
-            }
         }
 
         now = Date.now();

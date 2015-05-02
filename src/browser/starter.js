@@ -286,7 +286,7 @@ function V86Starter(options)
 
         if(fs_url)
         {
-            console.assert(base_url, "Filesystem: baseurl must be specified");
+            window.console.assert(base_url, "Filesystem: baseurl must be specified");
 
             var size;
 
@@ -515,7 +515,7 @@ V86Starter.prototype.save_state = function(callback)
  */
 V86Starter.prototype.get_statistics = function()
 {
-    console.warn("V86Starter.prototype.get_statistics is deprecated. Use events instead.");
+    window.console.warn("V86Starter.prototype.get_statistics is deprecated. Use events instead.");
 
     var stats = {
         cpu: {

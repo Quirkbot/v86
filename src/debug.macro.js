@@ -33,7 +33,7 @@
             }
         }
 
-        console.log(x);
+        window.console.log(x);
     };
 
     debug.init = function()
@@ -45,7 +45,7 @@
 
         if(cpu.io)
         {
-            // write seabios debug output to console
+            // write seabios debug output to window.console
             var seabios_debug = "";
 
             cpu.io.register_write(0x402, this, handle); // seabios
@@ -102,7 +102,7 @@
 
         if(DEBUG)
         {
-            console.trace();
+            window.console.trace();
             return s;
         }
         else

@@ -41,7 +41,7 @@
             {
                 if(http.status !== 200 && http.status !== 206)
                 {
-                    console.log("Loading the image `" + filename + "` failed");
+                    window.console.log("Loading the image `" + filename + "` failed");
                 }
                 else if(http.response)
                 {
@@ -107,7 +107,7 @@
                 }
                 else
                 {
-                    console.assert(false, 
+                    window.console.assert(false, 
                         "Cannot use: " + this.filename + ". " +
                         "`Range: bytes=...` header not supported");
                 }
@@ -125,9 +125,9 @@
      */
     AsyncXHRBuffer.prototype.get = function(offset, len, fn)
     {
-        console.assert(offset % this.block_size === 0);
-        console.assert(len % this.block_size === 0);
-        console.assert(len);
+        window.console.assert(offset % this.block_size === 0);
+        window.console.assert(len % this.block_size === 0);
+        window.console.assert(len);
 
         var range_start = offset;
         var range_end = offset + len - 1;
@@ -156,13 +156,13 @@
      */
     AsyncXHRBuffer.prototype.set = function(start, data, fn)
     {
-        console.assert(start + data.byteLength <= this.byteLength);
+        window.console.assert(start + data.byteLength <= this.byteLength);
         
         var len = data.length;
 
-        console.assert(start % this.block_size === 0);
-        console.assert(len % this.block_size === 0);
-        console.assert(len);
+        window.console.assert(start % this.block_size === 0);
+        window.console.assert(len % this.block_size === 0);
+        window.console.assert(len);
 
         var start_block = start / this.block_size;
         var block_count = len / this.block_size;
@@ -179,7 +179,7 @@
             var data_slice = data.subarray(i * this.block_size, (i + 1) * this.block_size);
             block.set(data_slice);
 
-            console.assert(block.byteLength === data_slice.length);
+            window.console.assert(block.byteLength === data_slice.length);
         }
 
         fn();
@@ -234,7 +234,7 @@
 
         if(file.size > (1 << 30))
         {
-            console.warn("SyncFileBuffer: Allocating buffer of " + (file.size >> 20) + " MB ...");
+            window.console.warn("SyncFileBuffer: Allocating buffer of " + (file.size >> 20) + " MB ...");
         }
 
         this.buffer = new ArrayBuffer(file.size);
@@ -293,7 +293,7 @@
      */
     SyncFileBuffer.prototype.get = function(start, len, fn)
     {
-        console.assert(start + len <= this.byteLength);
+        window.console.assert(start + len <= this.byteLength);
         fn(new Uint8Array(this.buffer, start, len));
     };
 
@@ -304,7 +304,7 @@
      */
     SyncFileBuffer.prototype.set = function(offset, slice, fn)
     {
-        console.assert(offset + slice.byteLength <= this.byteLength);
+        window.console.assert(offset + slice.byteLength <= this.byteLength);
 
         new Uint8Array(this.buffer, offset, slice.byteLength).set(slice);
         fn();
@@ -345,9 +345,9 @@
      */
     AsyncFileBuffer.prototype.get = function(offset, len, fn)
     {
-        console.assert(offset % this.block_size === 0);
-        console.assert(len % this.block_size === 0);
-        console.assert(len);
+        window.console.assert(offset % this.block_size === 0);
+        window.console.assert(len % this.block_size === 0);
+        window.console.assert(len);
 
         var fr = new FileReader();
 

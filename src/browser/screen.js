@@ -16,7 +16,7 @@ if(typeof window !== "undefined" && !window.requestAnimationFrame)
  */
 function ScreenAdapter(screen_container, bus)
 {
-    console.assert(screen_container, "1st argument must be a DOM container");
+    window.console.assert(screen_container, "1st argument must be a DOM container");
 
     var 
         graphic_screen = screen_container.getElementsByTagName("canvas")[0],
@@ -155,7 +155,7 @@ function ScreenAdapter(screen_container, bus)
 
     bus.register("screen-put-char", function(data)
     {
-        //console.log(data);
+        //window.console.log(data);
         this.put_char(data[0], data[1], data[2], data[3], data[4]);
     }, this);
 
