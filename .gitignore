@@ -1,5 +1,6 @@
 *.swp
 *.swo
+build
 deploy.sh
 screenshots/
 tests/qemu/test-i386
